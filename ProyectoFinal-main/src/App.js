@@ -9,6 +9,8 @@ import Anime from "./views/Anime";
 //Styles
 import "./App.sass";
 import NotFoundPage from "./views/NotFoundPage";
+import Login from "./views/Login";
+import Register from "./views/Register";
 
 function App() {
   /*Logica*/
@@ -17,6 +19,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="catalogue" element={<Catalogue />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
         <Route exact path="profile/:username" element={<Profile />} />
         <Route exact path="anime/:animename" element={<Anime />} />
         <Route path="*" element={<NotFoundPage />} />

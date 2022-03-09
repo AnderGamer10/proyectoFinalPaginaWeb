@@ -21,12 +21,15 @@ const Login = () => {
               className="card shadow-2-strong"
             >
               <div className="card-body p-5 text-center">
-                <h3 className="mb-5">Iniciar Sesión</h3>
+                <h3 className="mb-5">Registro</h3>
 
                 <div className="form-outline mb-4">
                   {errors.user && <span>Se requiere este campo</span>}
                   <input
-                    {...register("user", { required: true })}
+                    {...register("user", {
+                      required: true,
+                      minLength: { value: 3 },
+                    })}
                     placeholder="Usuario"
                     className="form-control form-control-lg"
                   />
@@ -43,7 +46,7 @@ const Login = () => {
                 </div>
 
                 <div className="d-flex justify-content-start mb-4">
-                  <Link to="/register">Registrarse</Link>
+                  <Link to="/login">Iniciar Sesión</Link>
                 </div>
 
                 <button
@@ -51,7 +54,7 @@ const Login = () => {
                   id="btnAcceso"
                   type="submit"
                 >
-                  Acceder
+                  Registrarse
                 </button>
               </div>
             </form>

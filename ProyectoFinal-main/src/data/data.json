@@ -3,7 +3,7 @@
     "name": "Shingeki no Kyojin",
     "description": "Shingeki des",
     "chapters": "24",
-    "image":"../img/Shingeki.jpg"
+    "image":"../img/ShingekinoKyojin.jpg"
   },
   {
     "name": "Sword Art Online",
@@ -15,7 +15,7 @@
     "name": "Fairy tail",
     "description": "FT",
     "chapters": "24",
-    "image":"../img/fairy-tail.jpg"
+    "image":"../img/Fairytail.jpg"
   },
   {
     "name": "Tate no Yuusha",

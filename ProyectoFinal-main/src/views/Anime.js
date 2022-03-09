@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar";
 
 //Styles
 import "../styles/Anime.sass";
-import img from "../img/Shingeki.jpg";
+import img from "../img/ShingekinoKyojin.jpg";
 //Data
 import data from "../data/data.json";
 
