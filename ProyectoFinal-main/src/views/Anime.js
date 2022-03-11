@@ -35,8 +35,7 @@ const Anime = () => {
       <Navbar />
       <br />
       {anime.map((ani) => (
-        <div key={ani.name} id="content">
-          {console.log(ani.name)}
+        <div className="card" key={ani.name} id="content">
           <img alt="" src={img} />
           <h2>Anime name: {ani.name}</h2>
           <p>Anime Description: {ani.description}</p>

@@ -1,6 +1,6 @@
 //React
 import { Link } from "react-router-dom";
-
+import "../styles/Card.sass";
 const Card = ({ data }) => {
   const imgStyles = {
     height: "260px",
@@ -9,7 +9,7 @@ const Card = ({ data }) => {
   console.log(data);
 
   return (
-    <div className="card">
+    <div className="card carta">
       <img
         src={data.image}
         alt={data.name}

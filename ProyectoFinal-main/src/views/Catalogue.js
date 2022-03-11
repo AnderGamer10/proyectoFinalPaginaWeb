@@ -12,21 +12,18 @@ import Navbar from "../components/Navbar";
 import data from "../data/data.json";
 
 //Styles
-import "../styles/Catalogue.sass";
+
 const Catalogue = () => {
   /*Logica*/
   return (
     <div>
       <Navbar />
       <br />
-
       <div className="container">
         <div className="row">
           {data.map((data) => (
             <div className="col-md-4" key={data.name}>
-              <div key={data.name}>
-                <Card data={data} />
-              </div>
+              <Card data={data} />
             </div>
           ))}
         </div>
