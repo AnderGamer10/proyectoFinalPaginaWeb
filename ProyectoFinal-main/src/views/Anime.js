@@ -29,14 +29,15 @@ const Anime = () => {
     };
 
     obtenerDatos();
-  }, []);
+  }, [animename]);
   return (
     <div>
       <Navbar />
+      <br />
       {anime.map((ani) => (
         <div key={ani.name} id="content">
           {console.log(ani.name)}
-          <img src={img} />
+          <img alt="" src={img} />
           <h2>Anime name: {ani.name}</h2>
           <p>Anime Description: {ani.description}</p>
         </div>

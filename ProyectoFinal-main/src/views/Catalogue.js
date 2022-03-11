@@ -12,12 +12,14 @@ import Navbar from "../components/Navbar";
 import data from "../data/data.json";
 
 //Styles
-
+import "../styles/Catalogue.sass";
 const Catalogue = () => {
   /*Logica*/
   return (
     <div>
       <Navbar />
+      <br />
+
       <div className="container">
         <div className="row">
           {data.map((data) => (
