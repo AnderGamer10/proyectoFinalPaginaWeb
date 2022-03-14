@@ -11,7 +11,7 @@ const Card = ({ data }) => {
   return (
     <div className="card carta">
       <img
-        src={data.image}
+        src={"http://ramenparados.com/wp-content/uploads/2018/09/fairy-tail-final-anime-719x1024.jpg"}
         alt={data.name}
         className="card-img-top"
         style={imgStyles}

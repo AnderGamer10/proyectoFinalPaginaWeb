@@ -12,7 +12,7 @@ const Navbar = () => {
         <label htmlFor="check" className="checkbtn">
           <img alt="" id="menuicon" src={menuicon} />
         </label>
-        <label className="logo">Nombre</label>
+        <label className="logo">MALABARJU</label>
         <ul>
           <li>
             <Link to="/">Inicio</Link>
