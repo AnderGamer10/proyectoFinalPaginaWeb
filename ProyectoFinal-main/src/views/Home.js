@@ -3,33 +3,44 @@ import MainNavbar from "../components/MainNavbar";
 import Footer from "../components/Footer";
 import "../styles/Home.sass"
 import { Carousel } from 'primereact/carousel';
+import { useEffect } from "react";
 const Home = () => {
   /*Logica*/
   const responsiveOptions = [
     {
-        breakpoint: '1024px',
-        numVisible: 3,
-        numScroll: 3
+      breakpoint: '1024px',
+      numVisible: 3,
+      numScroll: 3
     },
     {
-        breakpoint: '768px',
-        numVisible: 2,
-        numScroll: 2
+      breakpoint: '768px',
+      numVisible: 2,
+      numScroll: 2
     },
     {
-        breakpoint: '560px',
-        numVisible: 1,
-        numScroll: 1
+      breakpoint: '560px',
+      numVisible: 1,
+      numScroll: 1
     }
-];
+  ];
+
+  useEffect(()=>{
+    const obtenerDatos = async () => {
+      const url = "https://localhost:44354/api/AnimeDatas";
+      const data = await fetch(url).then(res => res.json());
+      console.log(data);
+    }
+    obtenerDatos();
+  },[])
+
   return (
     <div>
       <MainNavbar />
       <hr></hr>
       <h1>Popular en MALABARJU</h1>
-      
+
       {/* <Carousel value={products} itemTemplate={itemTemplate} numVisible={3} numScroll={1} responsiveOptions={responsiveOptions}></Carousel> */}
- 
+
       {/* <div id="masVistos">
         <div className="wrap">
           <div className="card">
@@ -95,57 +106,57 @@ const Home = () => {
         <div className="wrap">
           <div className="card">
             <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1948/120625.jpg"  />
+              <img src="https://cdn.myanimelist.net/images/anime/1948/120625.jpg" />
             </div>
           </div>
           <div className="card">
             <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1987/117507.jpg"  />
+              <img src="https://cdn.myanimelist.net/images/anime/1987/117507.jpg" />
             </div>
           </div>
           <div className="card">
             <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1530/117776.jpg"  />
+              <img src="https://cdn.myanimelist.net/images/anime/1530/117776.jpg" />
             </div>
           </div>
           <div className="card">
             <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
+              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
             </div>
           </div>
           <div className="card">
             <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
+              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
             </div>
           </div>
           <div className="card">
             <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
+              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
             </div>
           </div>
           <div className="card">
             <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
+              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
             </div>
           </div>
           <div className="card">
             <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
+              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
             </div>
           </div>
           <div className="card">
             <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
+              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
             </div>
           </div>
           <div className="card">
             <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
+              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
             </div>
           </div>
           <div className="card">
             <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
+              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
             </div>
           </div>
         </div>
