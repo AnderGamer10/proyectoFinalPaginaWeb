@@ -1,166 +1,86 @@
-import React from "react";
 import MainNavbar from "../components/MainNavbar";
 import Footer from "../components/Footer";
-import "../styles/Home.sass"
-import { Carousel } from 'primereact/carousel';
-import { useEffect } from "react";
-const Home = () => {
+import { Carousel } from "primereact/carousel";
+import "../styles/Home.sass";
+import "primeicons/primeicons.css";
+const Home = ({ data, setData }) => {
   /*Logica*/
+
   const responsiveOptions = [
     {
-      breakpoint: '1024px',
+      breakpoint: "1024px",
       numVisible: 3,
-      numScroll: 3
+      numScroll: 3,
     },
     {
-      breakpoint: '768px',
+      breakpoint: "768px",
       numVisible: 2,
-      numScroll: 2
+      numScroll: 2,
     },
     {
-      breakpoint: '560px',
+      breakpoint: "560px",
       numVisible: 1,
-      numScroll: 1
-    }
+      numScroll: 1,
+    },
   ];
-
-  useEffect(()=>{
-    const obtenerDatos = async () => {
-      const url = "https://localhost:44354/api/AnimeDatas";
-      const data = await fetch(url).then(res => res.json());
-      console.log(data);
-    }
-    obtenerDatos();
-  },[])
+  const animeTemplate = (anime) => {
+    return (
+      <div className="anime-item">
+        <div className="anime-item-content">
+          <div className="mb-3">
+            <img
+              src={`${anime.image}`}
+              onError={(e) =>
+                (e.target.src =
+                  "https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png")
+              }
+              alt={anime.name}
+              className="anime-image"
+            />
+          </div>
+          <div>
+            <h4 className="mb-1">{anime.name}</h4>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div>
       <MainNavbar />
       <hr></hr>
-      <h1>Popular en MALABARJU</h1>
-
-      {/* <Carousel value={products} itemTemplate={itemTemplate} numVisible={3} numScroll={1} responsiveOptions={responsiveOptions}></Carousel> */}
-
-      {/* <div id="masVistos">
-        <div className="wrap">
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1948/120625.jpg"  />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1987/117507.jpg"  />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1530/117776.jpg"  />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg"  />
-            </div>
-          </div>
-        </div>
-      </div> */}
-      <hr></hr>
-      <h1>Tendencias ahora </h1>
-      <div id="masVistos">
-        <div className="wrap">
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1948/120625.jpg" />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1987/117507.jpg" />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1530/117776.jpg" />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-pic-wrap">
-              <img src="https://cdn.myanimelist.net/images/anime/1704/106947.jpg" />
-            </div>
-          </div>
+      <div className="carousel">
+        <div className="card">
+          <Carousel
+            value={data}
+            numVisible={3}
+            numScroll={1}
+            responsiveOptions={responsiveOptions}
+            className="custom-carousel"
+            circular
+            // autoplayInterval={3000}
+            itemTemplate={animeTemplate}
+            header={<h2>Popular en MALABARJU</h2>}
+          />
         </div>
       </div>
+
+      <hr></hr>
+      {/* <div className="carousel">
+        <div className="card">
+          <Carousel
+            value={data}
+            numVisible={3}
+            numScroll={1}
+            responsiveOptions={responsiveOptions}
+            className="custom-carousel"
+            circular
+            itemTemplate={animeTemplate}
+            header={<h2>Tendencias ahora</h2>}
+          />
+        </div>
+      </div> */}
       <hr></hr>
       <Footer />
     </div>

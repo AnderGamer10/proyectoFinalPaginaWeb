@@ -11,13 +11,24 @@ import "./App.sass";
 import NotFoundPage from "./views/NotFoundPage";
 import Login from "./views/Login";
 import Register from "./views/Register";
+import { useEffect, useState } from "react";
 
 function App() {
   /*Logica*/
+  const [data, setData] = useState();
+  useEffect(() => {
+    const obtenerDatos = async () => {
+      const url = "https://localhost:5001/api/AnimeDatas";
+      const respuesta = await fetch(url).then((res) => res.json());
+      setData(respuesta);
+      console.log(respuesta);
+    };
+    obtenerDatos();
+  }, []);
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home data={data} setData={setData} />} />
         <Route path="catalogue" element={<Catalogue />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
