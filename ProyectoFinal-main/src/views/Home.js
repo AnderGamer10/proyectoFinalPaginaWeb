@@ -54,12 +54,11 @@ const Home = ({ data, setData }) => {
         <div className="card">
           <Carousel
             value={data}
-            numVisible={3}
+            numVisible={5}
             numScroll={1}
             responsiveOptions={responsiveOptions}
             className="custom-carousel"
             circular
-            // autoplayInterval={3000}
             itemTemplate={animeTemplate}
             header={<h2>Popular en MALABARJU</h2>}
           />
@@ -67,11 +66,11 @@ const Home = ({ data, setData }) => {
       </div>
 
       <hr></hr>
-      {/* <div className="carousel">
+      <div className="carousel">
         <div className="card">
           <Carousel
             value={data}
-            numVisible={3}
+            numVisible={5}
             numScroll={1}
             responsiveOptions={responsiveOptions}
             className="custom-carousel"
@@ -80,7 +79,7 @@ const Home = ({ data, setData }) => {
             header={<h2>Tendencias ahora</h2>}
           />
         </div>
-      </div> */}
+      </div>
       <hr></hr>
       <Footer />
     </div>
